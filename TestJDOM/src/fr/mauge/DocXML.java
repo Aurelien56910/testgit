@@ -20,15 +20,52 @@ public class DocXML {
 		
 		document = new Document(racine);
 		
+		/*Création des aliments*/
 		Element plat = new Element("Frites");
 		racine.addContent(plat);
+				
+		Element platPat = new Element("Patates");
+		racine.addContent(platPat);
 		
-		Attribute classe = new Attribute ("classe", "gras");
-		plat.setAttribute(classe);
+		Element platFrtSal = new Element("Frites");
+		racine.addContent(platFrtSal);
 		
+		/*Type de classe des aliments*/
+		Attribute classeFrtGrs = new Attribute ("classe", "gras");
+		plat.setAttribute(classeFrtGrs);
+		
+		Attribute classeFrtSal = new Attribute ("classe", "salé");
+		platFrtSal.setAttribute(classeFrtSal);
+		
+		Attribute classePatGrs = new Attribute ("classe", "gras");
+		platPat.setAttribute(classePatGrs);
+		
+		/*Accompagnement*/
 		Element accompagnement = new Element ("accompagnement");
 		accompagnement.setText("saucisses");
 		plat.addContent(accompagnement);
+		
+		Element accompagnementPatates = new Element ("accompagnement");
+		accompagnementPatates.setText("Carbonade");
+		platPat.addContent(accompagnementPatates);
+		
+		Element accompagnementFrtSal = new Element ("accompagnement");
+		accompagnementFrtSal.setText("Moules");
+		platFrtSal.addContent(accompagnementFrtSal);
+		
+		/*Sauces*/
+		Element Sauce = new Element ("Sauce");
+		Sauce.setText("Bière");
+		plat.addContent(Sauce);
+		
+		Element SaucePatates = new Element ("Sauce");
+		SaucePatates.setText("Bière");
+		platPat.addContent(SaucePatates);
+		
+		Element SauceFrtSal = new Element ("Sauce");
+		SauceFrtSal.setText("Roquefort");
+		platFrtSal.addContent(SauceFrtSal);
+		
 	}
 		
 	public static void affiche(){
